@@ -7,11 +7,10 @@ services:
       - '$HTTPS_PORT:443'
     volumes:
       - ./app:/app:delegated
+      - ./docker/nginx/vhost.conf:/opt/docker/etc/nginx/vhost.conf
     environment:
       - DUID=1000
       - GDID=1000
-      - WEB_DOCUMENT_ROOT=/app/web
-      - WEB_ALIAS_DOMAIN=$APP_URL
 
   mysql:
     image: mysql:5.7

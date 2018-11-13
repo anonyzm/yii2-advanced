@@ -14,7 +14,7 @@ env:
 	ln -s ./app/.env ./.env
 
 # project compilation
-build: up composer-install migrate create-user
+build: up composer-install prepare migrate create-user
 
 # docker containers up
 up:
@@ -23,6 +23,10 @@ up:
 # docker containers down
 down:
 	docker-compose stop
+
+# doing stuff
+prepare:
+	docker-compose exec --user application php php /app/yii init --interactive=0
 
 # installing composer dependencies
 composer-install:
