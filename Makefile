@@ -1,17 +1,18 @@
-##############################################
-#                                            #
-#                  USAGE                     #
-#                                            #
-#          make env                          #
-#          ** edit .env file **              #
-#          make build                        #
-#                                            #
-##############################################
+#############################################
+#                                           #
+#                  USAGE                    #
+#                                           #
+#          make env                         #
+# ** edit .env & docker/nginx/vhost.conf ** #
+#          make build                       #
+#                                           #
+#############################################
 
 # environment initalization
 env:
 	cp ./.env.dist ./app/.env
 	ln -s ./app/.env ./.env
+	cp ./docker/nginx/vhost.conf.dist ./docker/nginx/vhost.conf
 
 # project compilation
 build: up composer-install migrate
