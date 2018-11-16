@@ -31,7 +31,7 @@ composer-install:
 
 # proceeding migrations
 migrate:
-    timeout 5
+	timeout 5
 	docker-compose exec --user application php php /app/yii migrate --interactive=0
 
 # shortcut to enter php container as application user
