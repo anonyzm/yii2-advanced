@@ -43,26 +43,3 @@ server {
     include /opt/docker/etc/nginx/vhost.common.d/*.conf;
     include /opt/docker/etc/nginx/vhost.ssl.conf;
 }
-
-# API
-server {
-    listen 80 default_server;
-
-    server_name  _ api.local docker;
-
-    root "/app/api/web";
-    index index.php;
-
-    include /opt/docker/etc/nginx/vhost.common.d/*.conf;
-}
-server {
-    listen 443 default_server;
-
-    server_name  _ api.local docker;
-
-    root "/app/api/web";
-    index index.php;
-
-    include /opt/docker/etc/nginx/vhost.common.d/*.conf;
-    include /opt/docker/etc/nginx/vhost.ssl.conf;
-}
