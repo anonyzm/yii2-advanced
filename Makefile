@@ -14,7 +14,7 @@ env:
 	ln -s ./app/.env ./.env
 
 # project compilation
-build: up composer-install migrate create-user
+build: up composer-install migrate
 
 # docker containers up
 up:
@@ -31,10 +31,6 @@ composer-install:
 # proceeding migrations
 migrate:
 	docker-compose exec --user application php php /app/yii migrate --interactive=0
-
-# init default user
-create-user:
-	docker-compose exec --user application php php /app/yii tools/create-default-user
 
 # shortcut to enter php container as application user
 bash:
