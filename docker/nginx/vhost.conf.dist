@@ -1,8 +1,8 @@
 # FRONTEND
 server {
-    listen 80 default_server;
+    listen 80;
 
-    server_name  _ frontend.local docker;
+    server_name frontend.local;
 
     root "/app/frontend/web";
     index index.php;
@@ -10,9 +10,9 @@ server {
     include /opt/docker/etc/nginx/vhost.common.d/*.conf;
 }
 server {
-    listen 443 default_server;
+    listen 443;
 
-    server_name  _ frontend.local docker;
+    server_name frontend.local;
 
     root "/app/frontend/web";
     index index.php;
@@ -23,9 +23,9 @@ server {
 
 # BACKEND
 server {
-    listen 80 default_server;
+    listen 80;
 
-    server_name  _ backend.local docker;
+    server_name backend.local;
 
     root "/app/backend/web";
     index index.php;
@@ -33,9 +33,9 @@ server {
     include /opt/docker/etc/nginx/vhost.common.d/*.conf;
 }
 server {
-    listen 443 default_server;
+    listen 443;
 
-    server_name  _ backend.local docker;
+    server_name backend.local;
 
     root "/app/backend/web";
     index index.php;
