@@ -9,8 +9,8 @@ services:
       - ./app:/app:delegated
       - ./docker/nginx/vhost.conf:/opt/docker/etc/nginx/vhost.conf
     environment:
-      - DUID=1000
-      - GDID=1000
+      - DUID=$DUID
+      - GDID=$GDID
 
   mysql:
     image: mysql:5.7
