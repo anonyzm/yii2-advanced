@@ -14,7 +14,7 @@ env:
 	ln -s ./app/.env ./.env
 
 # project compilation
-build: up composer-install prepare migrate create-user
+build: up composer-install migrate create-user
 
 # docker containers up
 up:
