@@ -9,13 +9,7 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
-            'username' => 'root',
-            'password' => '',
-            'charset' => 'utf8',
-        ],
+        'db' => require (__DIR__ . '/connections/db.php'),
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
