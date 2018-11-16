@@ -24,10 +24,6 @@ up:
 down:
 	docker-compose stop
 
-# doing stuff
-prepare:
-	docker-compose exec --user application php php /app/yii init --interactive=0
-
 # installing composer dependencies
 composer-install:
 	docker-compose exec --user application php bash -c 'cd /app; composer install'
